@@ -1,40 +1,47 @@
-/* General Reset */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* GLOBAL */
 body {
   font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
-/* Container */
 .container {
   width: 90%;
   max-width: 1100px;
   margin: auto;
 }
 
-/* HEADER FLEX */
+/* ================= HEADER ================= */
 .site-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-/* NAV FLEX */
 .site-nav {
   display: flex;
   gap: 20px;
 }
 
-/* HERO FLEX */
+.site-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* ================= HERO ================= */
 .hero-grid {
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex-wrap: wrap; /* makes it responsive */
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .hero-copy {
@@ -47,25 +54,26 @@ body {
 
 .hero-banner {
   width: 100%;
-  height: auto;
+  border-radius: 10px;
 }
 
-/* TAG LIST FLEX */
+/* ================= TAGS ================= */
 .tag-list {
   display: flex;
-  gap: 10px;
-  list-style: none;
-  margin-top: 10px;
   flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  list-style: none;
 }
 
 .tag {
-  background: #eee;
+  background: #333;
+  color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
 }
 
-/* PROJECT GRID FLEX */
+/* ================= PROJECT GRID ================= */
 .project-grid {
   display: flex;
   gap: 20px;
@@ -74,22 +82,71 @@ body {
 
 .project {
   flex: 1 1 30%;
-  background: #f5f5f5;
+  background: #f4f4f4;
   padding: 15px;
-  border-radius: 8px;
-}
-
-/* CARD STYLE */
-.card {
-  margin: 20px 0;
-  padding: 20px;
   border-radius: 10px;
-  background: #fff;
 }
 
-/* FOOTER */
+/* ================= CARD ================= */
+.card {
+  background: #fafafa;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+/* ================= FORM ================= */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* ================= BUTTON ================= */
+.btn {
+  padding: 10px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* ================= FOOTER ================= */
 .site-footer .container {
   display: flex;
   justify-content: center;
   padding: 20px 0;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero-grid {
+    flex-direction: column;
+  }
+
+  .project-grid {
+    flex-direction: column;
+  }
+
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-nav {
+    flex-direction: column;
+    width: 100%;
+  }
 }
